@@ -1,0 +1,33 @@
+body,
+a,
+p,
+li,
+ul {
+  background: white;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+section {
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  margin-left: 20px;
+}
+nav {
+  background: blue;
+}
