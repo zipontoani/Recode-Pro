@@ -1,0 +1,120 @@
+/*resetando os estilos */
+body,
+ul,
+li,
+p {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-size: 1.2rem;
+  font-family: Arial;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header {
+  display: flex; /*configura os itens um ao lado do outro*/
+  justify-content: space-between; /*configura uma distância entre os itens*/
+  padding: 20px;
+  align-items: center; /*Alinhar os itens ao centro, para não ficar desproporcinar ao usar uma imagem*/
+  flex-wrap: wrap; /*Quando a tela for pequena e um ficar perto do outro, o menu irá para baixo.*/
+  background: #1d1e20;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  margin-left: 10px;
+}
+
+/*Aumentar a área do clique para quando estiver usando mobile*/
+.menu li a {
+  display: block;
+  padding: 10px;
+  /*background: tomato;*/
+}
+
+h1 {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/*Configura para que as imagens fiquem responsivas ao no máximo 100% o tamanho do container*/
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* CSS FLEXBOX 1 */
+.flex {
+  display: flex;
+  flex-wrap: wrap; /*faça isso após a configuração do flex > div */
+  max-width: 800px; /*determinando o tamanho máximo do container*/
+  margin: 0 auto; /*ao passar dos 800, irá alinhar ao centro.*/
+}
+
+/*configuração mínima para todos os itens
+flex 1 - se expanda
+flex 1 1 - pode ficar menor, flex "shrink".
+flex 1 1 200px - significa que sempre terá esta base de 200px, se não conseguir ter 200px, irá quebrar.
+*/
+.flex > div {
+  /*falando direto com a div*/
+  flex: 1 1 200px;
+  margin: 10px;
+}
+.grid1 {
+  background: tomato;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Definindo a quantidade de colunas. 3 colunas.*/
+  max-width: 800px;
+  padding: 10px;
+  margin: 0 auto;
+  grid-gap: 20px; /* espaçamento entre os itens */
+}
+
+/* 
+
+01- Preciso que os 3 primeiros box, noticias,tenham uma largura maior.
+02- um box com propaganda.
+03 - 6 box com imagens.
+obs: Estilizando usando "seletor de css" ,é uma solução alternativa a separação por CLASSE.
+
+*/
+.grid1 > div:nth-child(n + 4) {
+  /* seleciona o filho individualmente. Formula matemática, n + 5, a partir do que */
+  background: #0f0;
+  display: grid; /*setando um novo grid,para dividir em imagens pequenas.*/
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.grid1 > div.anuncio {
+  grid-column: 1; /* setando o anúncio na primeira coluna */
+  grid-row: 2 /5; /* setando o anúncio na linha 2 até a linha 5 */
+  display: block;
+  border-top: 10px solid #000;
+}
+
+/*@media query - a partir deste tamanho,habilitar os estilos abaixo */
+@media (max-width: 600px) {
+  /* quando a tela tiver no máximo 600px, aplique as seguintes configurações */
+  .grid1 {
+    grid-auto-columns: 1fr 1 fr;
+  }
+
+  .grid1 > div:nth-child(n + 4) {
+    display: block;
+  }
+  .grid1 > div.anuncio {
+    grid-column: auto;
+    grid-row: auto;
+    order: -1; /* setar o anúncio como primeiro item e não como último.*/
+  }
+}
