@@ -1,0 +1,51 @@
+.container {
+  margin: 0 auto;
+  color: #ffffff;
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  margin: 4px 4px 4px 4px;
+  font-size: 1.5em;
+  text-align: center;
+  border-radius: 25px;
+  padding: 10px;
+  border: 2px solid white;
+}
+.cabeçalho {
+  flex-basis: 800px;
+  margin-bottom: 0px;
+  padding: 20px;
+  background-color: #7d3c98;
+}
+.out {
+  margin: 2px;
+  flex-grow: 1;
+  background-color: #a569bd;
+}
+.section {
+  margin: 4px 2px 4px 2px;
+  flex-direction: column;
+  flex-basis: 200px;
+  background-color: #bb8fce;
+}
+.footer {
+  background-color: #bb8fce;
+}
+.s {
+  margin: 4px 0 0 0;
+  font-size: 1em;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+  border: 2px solid white;
+}
+.artigo {
+  margin: 4px 0 0 0;
+  font-size: 1em;
+  text-align: center;
+  border-radius: 30px;
+  padding: 50px;
+  border: 2px solid white;
+}
